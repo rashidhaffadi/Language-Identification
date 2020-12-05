@@ -2,12 +2,10 @@ from tokenizer import SpecialTokenizer, _words_tokenizer
 from fastai import *
 from fastai.text import *
 from fastai.callbacks import *
-from fastai.callbacks.tensorboard import *
+# from fastai.callbacks.tensorboard import *
 import gc
-# from fastcore.script import *
-from fastscript import *
+from fastcroe.script import *
 from fast_util import *
-store_true = bool_arg
 
 # defaults = {"epochs":5,
 # 			"bs":64,
@@ -67,7 +65,7 @@ def main(epochs:Param("number of epochs.", int)=5,
 	
 	cbs = []
 	if save: cbs.append(SaveModelCallback(clf, every='epoch', monitor='accuracy', name='awd_model'))
-	if tb: cbs.append(LearnerTensorboardWriter(model, base_dir=Path(tb), name="run"))
+	# if tb: cbs.append(LearnerTensorboardWriter(model, base_dir=Path(tb), name="run"))
 	if fp16: model = model.to_fp16()
 	model = fit_model(model, epochs, lr, callbacks=cbs)
 

@@ -242,14 +242,14 @@ def create_sentences(text, label, max_lenght):
     words = text.split(" ")
     sentences = []
     len_ = len(words)
-#     possible to randomize the lenght between [1...max_lenght]
-    lenght = random.randint(2, max_lenght)
+#     possible to randomize the lenght between [2...max_lenght]
+    lenght = random.randint(3, max_lenght)
     i = 0
     j = i+lenght
     while True:
         sentences.append(' '.join(words[i:j]))
         i = j
-        lenght = random.randint(1, max_lenght)
+        lenght = random.randint(3, max_lenght)
         j += lenght
         if j >= len_:
             break

@@ -31,7 +31,7 @@ DEBUG = False
 def _log_reg(nrange, atype):
     return [('vect', CountVectorizer(ngram_range=nrange, analyzer=atype)), 
            ('tfidf', TfidfTransformer(use_idf=False)), 
-           ('lrg', LogisticRegression(n_jobs=-1))]
+           ('lrg', LogisticRegression(n_jobs=-1, max_iter=250))]
 
 def _naive_bayes(nrange, atype):
     return [('vect', CountVectorizer(ngram_range=nrange, analyzer=atype)), 
@@ -41,7 +41,7 @@ def _naive_bayes(nrange, atype):
 def _svm(nrange, atype):
     return [('vect', CountVectorizer(ngram_range=nrange, analyzer=atype)), 
            ('tfidf', TfidfTransformer(use_idf=False)), 
-           ('svm', SVC())]
+           ('svm', SVC(tol=1e-4))]
 
 def _random_forest(nrange, atype):
     return [('vect', CountVectorizer(ngram_range=nrange, analyzer=atype)), 

@@ -119,6 +119,7 @@ class Shingle():
         if mode == "sum":
             for token in tokens:
                 tmp = self.model[label].get(token) or 0
+                if tmp < 0 : tmp = -tmp
                 score += tmp
         elif mode == "vote":
             for token in tokens:
@@ -127,6 +128,7 @@ class Shingle():
         elif mode == "average":
             for token in tokens:
                 tmp = self.model[label].get(token) or 0
+                if tmp < 0 : tmp = -tmp
                 score += tmp
             score /= len(tokens)
         elif mode == "product":
@@ -134,14 +136,18 @@ class Shingle():
             for token in tokens:
                 if self.model[label].get(token) is not None: tmp = self.model[label].get(token) + 1
                 else: tmp = 1
+                if tmp < 0 : tmp = -tmp
                 score *= tmp
         elif mode == "log":
             score = 1
             for token in tokens:
-                if self.model[label].get(token) is not None: tmp = self.model[label].get(token) + 1
-                else: tmp = 1
+                if self.model[label].get(token) is not None: 
+                    tmp = self.model[label].get(token) + 1
+                else: 
+                    tmp = 1
+                if tmp < 0 : tmp = -tmp
                 score *= tmp
-                score = -math.log10(score)    
+            score = math.log10(score)   
         return {label:score}
 
     def _scores(self, text):
