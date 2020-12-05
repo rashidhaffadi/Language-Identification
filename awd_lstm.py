@@ -4,7 +4,7 @@ from fastai.text import *
 from fastai.callbacks import *
 # from fastai.callbacks.tensorboard import *
 import gc
-from fastcroe.script import *
+from fastcore.script import *
 from fast_util import *
 
 # defaults = {"epochs":5,
