@@ -1,3 +1,7 @@
+# -*- coding: utf-8 -*-
+"""
+@author: Rashid Haffadi
+"""
 
 import psutil
 try: import humanize, GPUtil, wget

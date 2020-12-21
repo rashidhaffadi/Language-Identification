@@ -1,7 +1,5 @@
 # -*- coding: utf-8 -*-
 """
-Created on Fri Oct 16 00:19:46 2020
-
 @author: Rashid Haffadi
 """
 

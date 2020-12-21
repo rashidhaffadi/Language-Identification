@@ -1,3 +1,8 @@
+# -*- coding: utf-8 -*-
+"""
+@author: Rashid Haffadi
+"""
+
 def parallel(func, arr:Collection, max_workers:int=None, leave=False):
     "Call `func` on every element of `arr` in parallel using `max_workers`."
     max_workers = ifnone(max_workers, defaults.cpus)

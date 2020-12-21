@@ -1,3 +1,8 @@
+# -*- coding: utf-8 -*-
+"""
+@author: Rashid Haffadi
+"""
+
 import json, sys
 # from exceptions import ArgumentError
 

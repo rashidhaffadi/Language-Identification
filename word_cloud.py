@@ -1,3 +1,7 @@
+# -*- coding: utf-8 -*-
+"""
+@author: Rashid Haffadi
+"""
 
 from visualizations import *
 from fastcore.script import *

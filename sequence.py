@@ -1,3 +1,8 @@
+# -*- coding: utf-8 -*-
+"""
+@author: Rashid Haffadi
+"""
+
 from tokenizer import SpecialTokenizer, _words_tokenizer
 from fastai import *
 from fastai.text import *
